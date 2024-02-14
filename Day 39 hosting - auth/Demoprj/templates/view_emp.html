@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>View Employee</h2>
+    
+    <div class="row">
+        <div class="col">
+            <div class="mb-3">
+                <label for="id_name"class="form-label">Employee Name</label>
+                <input type="text" class="form-control" id="id_name" value="{{ employee.name }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputName"class="form-label">Email Address</label>
+                <input type="text" class="form-control" id="id_name" value="{{ employee.email }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputName"class="form-label">Address</label>
+                <input type="text" class="form-control" id="id_name" value="{{ employee.address }}">
+            </div>
+                <div class="mb-3">
+                    <label for="exampleInputName"class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="id_name" value="{{ employee.phone }}">
+                </div>    
+
+                    <div class="mb-3">
+                        <label for="exampleInputName"class="form-label">joining Date</label>
+                        <input type="text" class="form-control" id="id_name" value="{{ employee.doj }}"></div>
+                        <div class="mb-3">
+                            <label for="exampleInputName"class="form-label">salary</label>
+                            <input type="text" class="form-control" id="id_name" value="{{ employee.salary }}"></div>
+                            
+                            <div class="mb-3">
+                                <label for="exampleInputName"class="form-label">gender</label>
+                                <input type="text" class="form-control" id="id_name" value="{{ employee.gender }}">
+                                
+                            </div>
+    
+        </div>         
+        <div class="col">
+            <div class="mb-3">
+                <img src="{{employee.photo.url}}" alt="">
+            </div>
+                <div class="mb-3">
+                    <label for="exampleInputName"class="form-label">department</label>
+                    <input type="text" class="form-control" id="id_name" value="{{ employee.department }}">
+                </div>
+
+    </div>
+
+    
+<a href="{% url 'home' %}">Go Home</a>
+
+
+
+
+</form> 
+{% endblock content  %}
